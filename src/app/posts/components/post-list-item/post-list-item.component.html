@@ -1,0 +1,13 @@
+
+
+<ng-container *ngIf="post">
+
+  <div class="card" style="width: 18rem;">
+    <img [src]="post.images[0]" class="card-img-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">{{post.author.name}}</h5>
+      <p class="card-text">{{post.body}}</p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+  </div>
+</ng-container>
