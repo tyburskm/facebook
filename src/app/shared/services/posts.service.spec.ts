@@ -3,6 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { PostsService } from './posts.service';
 import { post } from 'selenium-webdriver/http';
+import { IPostList } from '../interfaces/post-list.interface';
 
 describe('PostsService', () => {
 
@@ -36,9 +37,18 @@ describe('PostsService', () => {
       const response = service.getPosts(); //promise
       const server = httpMock.expectOne('assets/posts.json');
 
-      server.flush(['pierwszy', 'drugi']);
+      const fakePostList = [
+        {id: "asd"},
+        {id: "qwe"}
+      ] as IPostList;
+
+      const meh = {
+        posts: fakePostList,
+      };
+      
+      server.flush(meh);
       const posts = await response;
-      expect(posts).toEqual(['pierwszy', 'drugi']);
+      expect(posts).toEqual(fakePostList);
 
     });
 
