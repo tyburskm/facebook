@@ -39,13 +39,13 @@ describe('PostsService', () => {
 
       const fakePostList = [
         {id: "asd"},
-        {id: "qwe"}
+        {id: "qwe"} 
       ] as IPostList;
 
       const meh = {
         posts: fakePostList,
       };
-      
+
       server.flush(meh);
       const posts = await response;
       expect(posts).toEqual(fakePostList);

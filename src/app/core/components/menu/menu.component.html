@@ -1,10 +1,11 @@
 <nav>
-  <ul class="nav">
+  <ul class="nav nav-pills m-3">
     <li class="nav-item">
-      <a class="nav-link" routerLink="/">Home Page</a>
+      <a class="nav-link" routerLink="/"  routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">Home Page</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="/404">404</a>
+      <a class="nav-link" routerLink="/404" >404</a>
     </li>
   </ul>
 </nav>
