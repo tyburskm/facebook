@@ -5,7 +5,7 @@ import { MenuComponent } from './menu.component';
 describe('MenuComponent', () => {
   let component: MenuComponent;
   let fixture: ComponentFixture<MenuComponent>;
-
+  let $component: any;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MenuComponent ]
@@ -16,8 +16,13 @@ describe('MenuComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;
+    $component = fixture.debugElement.nativeElement;
     fixture.detectChanges();
   });
+
+  afterEach(()=>{
+    $component.remove();
+  })
 
   it('should create', () => {
     expect(component).toBeTruthy();
