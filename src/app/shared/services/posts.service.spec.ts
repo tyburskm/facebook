@@ -5,6 +5,7 @@ import { PostsService } from './posts.service';
 import { post } from 'selenium-webdriver/http';
 import { IPostList } from '../interfaces/post-list.interface';
 import { IPostListItem } from '../interfaces/post-list-item.interface';
+import { environment } from 'src/environments/environment';
 
 describe('PostsService', () => {
 
@@ -36,7 +37,7 @@ describe('PostsService', () => {
 
     it('should make HTTP request', async () => {
       const response = service.getPosts(); //promise
-      const server = httpMock.expectOne('assets/posts.json');
+      const server = httpMock.expectOne(environment.postsUrl);
 
       const fakePostList = [
         {id: "asd"},
@@ -70,7 +71,7 @@ describe('PostsService', () => {
 
     it('should make HTTP request', async () => {
       const response = service.getPostById("asd"); //promise
-      const server = httpMock.expectOne('assets/posts.json');
+      const server = httpMock.expectOne(environment.postsUrl);
 
       const fakePost = {id: "asd"} as IPostListItem;
       const fakePostList = [
