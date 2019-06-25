@@ -1,1 +1,13 @@
-<app-post-list-item [post]="post"></app-post-list-item>
+<ng-container *ngIf="post">
+
+    <div class="card m-3" >
+      <img [src]="post.images[0]" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">{{post.author.name}}</h5>
+        <p class="card-text">{{post.body}}</p>
+        <hr>
+        <p class="card-text">{{post.created_time | myDate}}</p>
+        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      </div>
+    </div>
+  </ng-container>
