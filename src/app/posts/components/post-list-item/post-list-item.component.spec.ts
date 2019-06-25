@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostListItemComponent } from './post-list-item.component';
+import { MyDatePipe } from 'src/app/shared/pipes/my-date.pipe';
 
 describe('PostListItemComponent', () => {
   let component: PostListItemComponent;
@@ -9,7 +10,7 @@ describe('PostListItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostListItemComponent ]
+      declarations: [ PostListItemComponent, MyDatePipe ]
     })
     .compileComponents();
   }));
