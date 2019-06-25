@@ -1,0 +1,22 @@
+[
+    {
+      "id": "asd123",
+      "body": "whooah!",
+      "author": {
+        "name": "admin admin"
+        },
+      "images": [
+            "https://picsum.photos/200/100"
+        ]
+    },
+    {
+      "id": "qwe321",
+      "body": "omg!",
+      "author": {
+        "name": "user user"
+        },
+      "images": [
+            "https://picsum.photos/200/100"
+        ]
+    }
+]
