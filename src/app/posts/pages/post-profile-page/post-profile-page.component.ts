@@ -20,7 +20,7 @@ export class PostProfilePageComponent implements OnInit {
   async setupPost(){
     const id: string = this.route.snapshot.params.post_id;
     console.log(id);
-    this.post = await this.postService.getPostById(id);
+    this.post = await this.postService.getPostsById(id);
   }
 
 }

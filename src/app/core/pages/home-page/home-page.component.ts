@@ -17,11 +17,12 @@ export class HomePageComponent implements OnInit {
   }
 
   async setupPosts(){
-    this.allPosts = await this.postsService.getPosts();
+    this.allPosts = await this.postsService.fetchPosts();
   }
 
   onPostAdd(post){
     this.allPosts.unshift(post);
+    this.postsService.savePosts(this.allPosts);
   }
 
 }

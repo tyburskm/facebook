@@ -30,13 +30,13 @@ describe('PostsService', () => {
 
     it('should contains method getPosts', () => {
       // const service: PostsService = TestBed.get(PostsService);
-      expect(service.getPosts).toEqual(
+      expect(service.fetchPosts).toEqual(
         jasmine.any(Function)
       );
     });
 
     it('should make HTTP request', async () => {
-      const response = service.getPosts(); //promise
+      const response = service.fetchPosts(); //promise
       const server = httpMock.expectOne(environment.postsUrl);
 
       const fakePostList = [
@@ -64,13 +64,13 @@ describe('PostsService', () => {
 
     it('should contains method getPostById', () => {
       // const service: PostsService = TestBed.get(PostsService);
-      expect(service.getPostById).toEqual(
+      expect(service.getPostsById).toEqual(
         jasmine.any(Function)
       );
     });
 
     it('should make HTTP request', async () => {
-      const response = service.getPostById("asd"); //promise
+      const response = service.getPostsById("asd"); //promise
       const server = httpMock.expectOne(environment.postsUrl);
 
       const fakePost = {id: "asd"} as IPostListItem;
