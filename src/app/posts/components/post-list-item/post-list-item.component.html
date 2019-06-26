@@ -2,6 +2,37 @@
 
 <ng-container *ngIf="post">
 
+
+  <div class="card text-center m-3" >
+    <div class="card-header d-flex">
+      <!-- <div class="row"> -->
+        <div class="">
+            <img [src]="post.author.avatar_url" class="avatar mr-3 rounded">
+        </div>
+        <div class="text-left">
+            <h5 class="card-title">{{post.author.name}}</h5>
+            <h6><a class="card-text" routerLink="posts/{{post.id}}">{{post.created_time | myDate}}</a></h6>
+        </div>
+    
+      
+    </div>
+    <img [src]="post.images[0]" class="card-img-top" alt="" routerLink="posts/{{post.id}}">
+
+    <div class="card-body">
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+    <div class="card-footer text-muted">
+      <div class="d-flex">
+              <input class="form-control mr-2" placeholder="Type a comment" type="text">
+
+              <button type="button" class="btn btn-secondary">Comment</button>
+
+      </div>
+    </div>
+  </div>
+<!-- 
   <div class="card m-3" style="width: 18rem;">
     <img [src]="post.images[0]" class="card-img-top" alt="" routerLink="posts/{{post.id}}">
     <div class="card-body">
@@ -9,7 +40,7 @@
       <p class="card-text">{{post.body}}</p>
       <hr>
       <p class="card-text">{{post.created_time | myDate}}</p>
-      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <a href="#" class="btn btn-primary">Go somewhere</a> 
     </div>
-  </div>
+  </div> -->
 </ng-container>
