@@ -1,0 +1,34 @@
+<div class="card mb-3">
+    <div class="card-body">
+        <form class="mx-1"
+        [formGroup]="addPostForm"
+        (ngSubmit)="onSubmit()"
+        >
+            <div class="form-group row">
+                <textarea
+                    class="form-control col-11 mx-auto"
+                    [class.is-invalid]="post.invalid && post.dirty"
+                    placeholder="Wpisz post..."
+                    name="post"
+                    rows="3"
+                    formControlName="post"
+                    required
+                ></textarea>
+            </div>
+
+            <div
+                class="alert alert-danger"
+                *ngIf="post.invalid && post.dirty"
+            >
+                Pole wymagane
+            </div>
+
+            <button
+                type="submit"
+                class="btn btn-primary"
+            >
+                Dodaj
+            </button>
+        </form>
+    </div>
+</div>
