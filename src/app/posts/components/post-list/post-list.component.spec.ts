@@ -4,6 +4,7 @@ import { PostListComponent } from './post-list.component';
 import { PostListItemComponent } from '../post-list-item/post-list-item.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CommentsModule } from 'src/app/comments/comments.module';
 
 describe('PostListComponent', () => {
   let component: PostListComponent;
@@ -15,7 +16,8 @@ describe('PostListComponent', () => {
       declarations: [ PostListComponent, PostListItemComponent ],
       imports: [
         SharedModule,
-        RouterTestingModule
+        RouterTestingModule,
+        CommentsModule
       ]
     })
     .compileComponents();
