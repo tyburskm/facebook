@@ -1,6 +1,10 @@
 <ng-container *ngIf="comment">
 
-<p class="comment-body">
-   {{comment.body}}
-</p>
+<div class="media comment-body border p-1 m-3">
+  <img [src]="getCommentAuthorAvatar()" class="mr-3" alt="...">
+  <div class="media-body text-left">
+    {{comment.body}}
+  </div>
+</div>
+
 </ng-container>

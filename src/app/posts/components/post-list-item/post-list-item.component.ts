@@ -16,6 +16,11 @@ export class PostListItemComponent implements OnInit {
 
   onAddComment(comment){
     console.log("addoncomment",comment)
+    if (!Array.isArray(this.post.comments)){
+      this.post.comments = [];
+    }
+    this.post.comments.push(comment);
+
   }
 
 

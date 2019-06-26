@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ICommentList } from 'src/app/shared/interfaces/comment-list.interface';
+import { ICommentListItem } from 'src/app/shared/interfaces/comment-list-item.interface';
 
 @Component({
   selector: 'app-comment-list',
@@ -8,7 +9,7 @@ import { ICommentList } from 'src/app/shared/interfaces/comment-list.interface';
 })
 export class CommentListComponent implements OnInit {
 
-  comments: ICommentList = null;
+  @Input() comments: ICommentList = null;
 
   constructor() { }
 

@@ -1,4 +1,4 @@
-<form class="form-inline" (ngSubmit)="onSubmit()"
+<form class="form-inline" (ngSubmit)="onSubmit(commentForm)"
 #commentForm="ngForm"
 >
 <!-- <pre>
@@ -12,7 +12,7 @@
        [(ngModel)]="comment.body"
        required
        minlength="3"
-       maxlength="10"
+       maxlength="100"
        >
     </div>
     <button type="submit" class="btn btn-dark btn-sm"

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ICommentListItem } from 'src/app/shared/interfaces/comment-list-item.interface';
 
 @Component({
@@ -9,11 +9,15 @@ import { ICommentListItem } from 'src/app/shared/interfaces/comment-list-item.in
 export class CommentListItemComponent implements OnInit {
 
 
-  comment: ICommentListItem = null;
+  @Input() comment: ICommentListItem = null;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getCommentAuthorAvatar(){
+    return "http://placeskull.com/40/40";
   }
 
 }
